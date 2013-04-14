@@ -1,0 +1,17 @@
+{
+  "name": "value",
+  "repo": "component/value",
+  "description": "Set form input values",
+  "version": "0.0.1",
+  "keywords": ["form", "input", "field", "val", "value"],
+  "dependencies": {},
+  "development": {
+    "component/dom": "*",
+    "component/assert": "*"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}
