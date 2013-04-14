@@ -9,7 +9,13 @@
 
 ## API
 
-   
+### value(el)
+
+  Get `el`'s value.
+
+### value(el, value)
+
+  Set `el`'s value.
 
 ## License
 
