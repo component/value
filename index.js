@@ -20,11 +20,12 @@ module.exports = function(el, val){
 function get(el) {
   switch (type(el)) {
     case 'checkbox':
-      return el.getAttribute('checked') == 'checked'
-        ? null == el.getAttribute('value')
-          ? true
-          : el.getAttribute('value')
-        : false;
+      if (el.checked) {
+        var attr = el.getAttribute('value');
+        return null == attr ? true : attr;
+      } else {
+        return false;
+      }
     default:
       return el.value;
   }
@@ -38,13 +39,10 @@ function set(el, val) {
   switch (type(el)) {
     case 'checkbox':
       if (val) {
-        el.setAttribute('checked', 'checked');
+        el.checked = true;
       } else {
-        el.removeAttribute('checked');
+        el.checked = false;
       }
-      break;
-    case 'input':
-      el.setAttribute('value', val);
       break;
     default:
       el.value = val;
