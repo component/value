@@ -55,6 +55,7 @@ function set(el, val) {
 
 function type(el) {
   var name = el.nodeName.toLowerCase();
-  if ('input' == name && 'checkbox' == el.getAttribute('type')) return 'checkbox';
-  return name.toLowerCase();
+  var type = el.getAttribute('type');
+  if ('input' == name && type && 'checkbox' == type.toLowerCase()) return 'checkbox';
+  return name;
 }
