@@ -26,6 +26,11 @@ function get(el) {
       } else {
         return false;
       }
+    case 'select':
+      for (var i = 0, option; option = el.options[i]; i++) {
+        if (option.selected) return option.value;
+      }
+      break;
     default:
       return el.value;
   }
@@ -44,6 +49,11 @@ function set(el, val) {
         el.checked = false;
       }
       break;
+    case 'select':
+      for (var i = 0, option; option = el.options[i]; i++) {
+        option.selected = option.value === val;
+      }
+      break;
     default:
       el.value = val;
   }
@@ -57,5 +67,6 @@ function type(el) {
   var name = el.nodeName.toLowerCase();
   var type = el.getAttribute('type');
   if ('input' == name && type && 'checkbox' == type.toLowerCase()) return 'checkbox';
+  if ('select' == name) return 'select';
   return name;
 }
