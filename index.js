@@ -24,7 +24,7 @@ module.exports = function(el, val){
  */
 
 function get(el) {
-  switch (kind(el)) {
+  switch (type(el)) {
     case 'checkbox':
     case 'radio':
       if (el.checked) {
@@ -48,7 +48,7 @@ function get(el) {
  */
 
 function set(el, val) {
-  switch (kind(el)) {
+  switch (type(el)) {
     case 'checkbox':
     case 'radio':
       if (val) {
@@ -68,10 +68,10 @@ function set(el, val) {
 }
 
 /**
- * Element kind.
+ * Element type.
  */
 
-function kind(el) {
+function type(el) {
   var group = 'array' == typeOf(el) || 'object' == typeOf(el);
   if (group) el = el[0];
   var name = el.nodeName.toLowerCase();
