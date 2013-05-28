@@ -2,7 +2,7 @@
   "name": "value",
   "repo": "component/value",
   "description": "Set form input values",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "keywords": ["form", "input", "field", "val", "value"],
   "dependencies": {
     "component/type": "*"
